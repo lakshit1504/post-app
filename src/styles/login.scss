@@ -8,9 +8,6 @@
     background-repeat: no-repeat;
     background-position: -10vw 60vh;
     background-size: 40rem;
-   
-
-    
     
 }
 .pic{
@@ -49,13 +46,14 @@
     width: 70%;
     height: 60%;
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 4vh;
 
     >h2{
         font-size: 1.2rem;
         text-transform: uppercase;
         font-family: "Roboto";
         margin: 2rem 0;
+        text-align: center;
     }
 
     >input{
