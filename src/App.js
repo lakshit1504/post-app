@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {Route, BrowserRouter as Router, Routes,Navigate} from "react-router-dom";
+
+
+import "./styles/app.scss"
+import "./styles/header.scss"
+import "./styles/card.scss"
+import "./styles/postList.scss"
+import "./styles/postDetails.scss"
+import "./styles/login.scss"
+
+import Header from "./components/Layout/Header";
+import Posts from "./components/home/Posts";
+import PostDetail from "./components/home/PostDetail";
+import Login from "./components/home/Login";
 
 function App() {
+  let isAuthenticated=true;
+  
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+    <Router>
+        <Header isAuthenticated={true}/>
+         <Routes>
+            <Route path="/" element={<Posts/>}></Route>
+            <Route path="/:id"  element={<PostDetail/>}></Route>
+            <Route path="/login"  element={<Login/>}></Route>
+            <Route path="*"  element={<Login/>}></Route>
+            
+         </Routes>
+      </Router>
     </div>
   );
 }
